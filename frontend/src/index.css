@@ -1,0 +1,318 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Manrope', 'Montserrat', sans-serif;
+  background-color: #f4f6fa;
+  margin: 0;
+  padding: 0;
+  color: #1a1a1a;
+}
+
+/* --- СТИЛИ ШАПКИ И ЛОГОТИПА НАЙДУ.ONLINE --- */
+.header {
+  background-color: #ffffff;
+  padding: 15px 0;
+  box-shadow: 0 2px 10px rgba(138, 43, 226, 0.04);
+  margin-bottom: 40px;
+  border-bottom: 1px solid #f0edf8;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logoStyle2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 26px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.logoBase {
+  color: #110d24;
+}
+
+.logoGlow {
+  background: linear-gradient(135deg, #8A2BE2 0%, #4a0e80 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.domainStyle2 {
+  font-size: 11px;
+  background-color: #f1f0ff;
+  color: #8A2BE2;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-weight: 700;
+  margin-left: 6px;
+  vertical-align: super;
+  text-transform: lowercase;
+}
+
+.header-subtitle {
+  font-size: 14px;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+/* --- ОСНОВНОЙ КОНТЕЙНЕР И ЗАГОЛОВКИ --- */
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 60px 20px;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+/* --- БЛОК ФИЛЬТРОВ В ФИРМЕННОМ СТИЛЕ --- */
+.filters-panel {
+  background: #ffffff;
+  border: 1px solid #e0d5ff;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 35px;
+  box-shadow: 0 4px 12px rgba(138, 43, 226, 0.03);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  align-items: end;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filter-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #6c757d;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.filter-input {
+  padding: 11px 14px;
+  border-radius: 10px;
+  border: 1px solid #e0d5ff;
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  color: #1a1a1a;
+  background-color: #faf9ff;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.filter-input:focus {
+  border-color: #8A2BE2;
+  box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.1);
+}
+
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 42px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2b2b2b;
+  user-select: none;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #8A2BE2;
+  cursor: pointer;
+}
+
+/* --- СЕТКА И КАРТОЧКИ БАНКОВ --- */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #e0d5ff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(138, 43, 226, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card:hover {
+  border-color: #8A2BE2;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(138, 43, 226, 0.08);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.bank-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* --- СТИЛИ ДЛЯ ЛОГОТИПОВ БАНКОВ --- */
+.bank-logo-container {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.bank-logo-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.bank-logo-placeholder {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, #8A2BE2 0%, #4a0e80 100%);
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(138, 43, 226, 0.2);
+  text-transform: uppercase;
+}
+
+.bank-name {
+  font-size: 14px;
+  font-weight: 800;
+  color: #6c757d;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card-type-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background-color: #f1f0ff;
+  color: #8A2BE2;
+  text-transform: uppercase;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 15px 0;
+  color: #111;
+}
+
+/* --- ГЛАВНЫЕ МАРКЕРЫ (КЭШБЭК, ОБСЛУЖИВАНИЕ) --- */
+.features-list {
+  margin-bottom: 20px;
+}
+
+.feature-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px dashed #f0f0f0;
+  font-size: 15px;
+  color: #555;
+}
+
+.feature-value {
+  font-weight: 600;
+  color: #2b2b2b;
+}
+
+/* --- КНОПКА С ФИОЛЕТОВЫМ ГРАДИЕНТОМ --- */
+.btn-cta {
+  display: block;
+  width: 100%;
+  background: linear-gradient(135deg, #8A2BE2 0%, #4a0e80 100%);
+  color: #ffffff !important;
+  text-align: center;
+  padding: 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(138, 43, 226, 0.2);
+  transition: transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.btn-cta:hover {
+  box-shadow: 0 8px 20px rgba(138, 43, 226, 0.3);
+}
+
+.btn-cta:active {
+  transform: translateY(0);
+}
+
+.link-detail {
+  display: block;
+  text-align: center;
+  margin-top: 12px;
+  color: #8A2BE2;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  background: none;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+}
+
+.link-detail:hover {
+  text-decoration: underline;
+}
+
+/* --- СОСТОЯНИЯ --- */
+.status-box {
+  text-align: center;
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e0d5ff;
+  color: #6c757d;
+}
