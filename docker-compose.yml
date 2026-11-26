@@ -1,0 +1,35 @@
+services:
+  db:
+    image: postgres:16-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-card_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-card_pass}
+      POSTGRES_DB: ${POSTGRES_DB:-cards_db}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-card_user} -d ${POSTGRES_DB:-cards_db}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build: ./backend
+    restart: always
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER:-card_user}:${POSTGRES_PASSWORD:-card_pass}@db:5432/${POSTGRES_DB:-cards_db}
+    depends_on:
+      db:
+        condition: service_healthy
+
+  frontend:
+    build: ./frontend
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:
